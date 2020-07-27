@@ -20,9 +20,10 @@ Check these if you believe they are true
 - [ ] Is documented according to the [standards](https://github.com/DynamoDS/Dynamo/wiki/Coding-Standards)
 - [ ] The level of testing this PR includes is appropriate
 - [ ] User facing strings, if any, are extracted into `*.resx` files
-- [ ] All tests pass using the self-service CI.
-- [ ] Snapshot of UI changes, if any.
+- [ ] All tests pass using the self-service CI
+- [ ] Snapshot of UI changes, if any
 - [ ] Changes to the API follow [Semantic Versioning](https://github.com/DynamoDS/Dynamo/wiki/Dynamo-Versions) and are documented in the [API Changes](https://github.com/DynamoDS/Dynamo/wiki/API-Changes) document.
+- [ ] This PR modifies some build requirements and the readme is updated
 
 ### Reviewers
 
