@@ -1360,7 +1360,7 @@ namespace DSCore
             var indices = Enumerable.Range(0, list.Count).Where(i => list[i] != null ? list[i].Equals(item) : item == null).ToList();
             return indices;
         }
-
+        
         /// <summary>
         ///     Flattens a nested list of lists by a certain amount.
         /// </summary>
@@ -1377,6 +1377,21 @@ namespace DSCore
             }
             return Flatten(list, amount, new List<object>());
         }
+        
+        /// <summary>
+        ///     Removes all matching items from the the list.
+        /// </summary>
+        /// <param name="list">List to remove items from.</param>
+        /// <param name="item">Item to remove.</param>
+        /// <returns name="list">List of remaining items.</returns>
+        /// <search>drop,remove,all,shorten</search>
+        [IsVisibleInDynamoLibrary(true)]
+        public static IList RemoveAll(IList list, object item)
+        {
+            list.Cast<object>().RemoveAll(item => item == object);
+            return list
+        }
+        
         #endregion
 
         #region private helper methods
