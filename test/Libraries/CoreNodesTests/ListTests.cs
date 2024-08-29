@@ -1368,5 +1368,13 @@ namespace DSCoreNodesTests
 
             Assert.Throws<ArgumentException>(() => List.GroupByKey(list, keys));
         }
+        
+        [Test]
+        [Category("UnitTests")]
+        public static void RemoveAllFromList()
+        {
+            Assert.AreEqual(new List<int> { 0, 1, 3, 4, 5 }, List.RemoveAll(new List<int> { 0, 1, 2, 3, 2, 4, 5 }, 2));
+        }
+        
     }
 }
