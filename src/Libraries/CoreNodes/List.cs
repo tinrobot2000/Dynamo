@@ -949,6 +949,14 @@ namespace DSCore
         [IsVisibleInDynamoLibrary(true)]
         public static IList RemoveItemAtIndex(IList list, int[] indices)
         {
+            indices.Where(i => i < 0).ToList().ForEach(i => i = list.Count + i)
+
+            // When calculated index is more than list count or still negative, throw exception
+            if (indices.Any(i => i >= list.Count || i < 0))
+            {
+                throw new IndexOutOfRangeException();
+            }
+            
             return list.Cast<object>().Where((_, i) => !indices.Contains(i)).ToList();
         }
 
